@@ -19,15 +19,15 @@ jobs:
           dotnet-version: "3.1"
       - 
         name: "Build with dotnet"
-        run: "dotnet build --configuration Release .\\TestCiCd"
+        run: "dotnet build --configuration Release .\\TestCICD"
       - 
         name: "dotnet publish"
-        run: "dotnet publish -c Release -o TestCiCd .\\TestCiCd\n"
+        run: "dotnet publish -c Release -o TestCICD .\\TestCICD\n"
       - 
         name: "Deploy to IIS"
         run: |
             iisreset /stop
-            Copy-Item ./TestCiCd/* C:/inetpub/wwwroot/dotnetcore-webapp -Recurse -Force
+            Copy-Item ./TestCIId/* C:/inetpub/wwwroot/dotnetcore-webapp -Recurse -Force
             iisreset /start
       - 
         name: "Curl the website as a smoke test"
