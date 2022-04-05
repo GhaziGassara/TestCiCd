@@ -22,7 +22,7 @@ jobs:
         run: "dotnet build --configuration Release .\\testCICD"
       - 
         name: "dotnet publish"
-        run: "dotnet publish -c Release -o TestCICD .\\testCICD\n"
+        run: "dotnet publish -c Release -o TestCICD .\testCICD"
       - 
         name: "Deploy to IIS"
         run: |
