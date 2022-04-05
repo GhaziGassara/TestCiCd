@@ -19,7 +19,7 @@ jobs:
           dotnet-version: "3.1"
       - 
         name: "Build with dotnet"
-        run: "dotnet build --configuration Release .\\testCICD"
+        run: "dotnet build --configuration Release .\testCICD"
       - 
         name: "dotnet publish"
         run: "dotnet publish -c Release -o TestCICD .\testCICD"
