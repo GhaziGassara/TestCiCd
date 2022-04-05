@@ -26,7 +26,6 @@ jobs:
       - 
         name: "Deploy to IIS"
         run: |
-            iisreset /stop
             Copy-Item ./testCICD/* C:/inetpub/wwwroot/dotnetcore-webapp -Recurse -Force
             iisreset /start
       - 
