@@ -5,29 +5,23 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
- 
-jobs: 
-  build-and-deploy: 
+
+jobs:
+  build:
+
     runs-on: ubuntu-latest
-    steps: 
-      - 
-        uses: actions/checkout@v2
-      - 
-        name: "Setup .NET Core"
-        uses: actions/setup-dotnet@v1
-        with: 
-          dotnet-version: "3.1"
-      - 
-        name: "Build with dotnet"
-        run: "dotnet build --configuration Release"
-      - 
-        name: "dotnet publish"
-        run: "dotnet publish -c Release"
-      - 
-        name: "Deploy to IIS"
-        run: |
-            Copy-Item ./testCICD/* C:/inetpub/wwwroot/dotnetcore-webapp -Recurse -Force
-            iisreset /start
-      - 
-        name: "Curl the website as a smoke test"
-        run: "curl http://localhost/dotnetcore-webapp"
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    - name: release
+      run: dotnet publish - c release -o ../publish testCICD/testCICD.csproj
