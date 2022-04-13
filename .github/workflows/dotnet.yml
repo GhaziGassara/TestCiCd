@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: upload content
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v3
       with:
         name: donwloadartifact
         path: tt
@@ -32,7 +32,7 @@ jobs:
      needs: build
      steps:
      - name: donwloadartifact
-       uses: actions/download-artifact@v1
+       uses: actions/download-artifact@v3
        with:
         name: testArtifact
         path: tt
