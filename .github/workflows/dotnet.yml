@@ -23,11 +23,6 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-    - name: Deploy to IIS
-      uses: actions/upload-artifact@v1
-      with:
-         name: my-artifact
-         path: path/to/artifact/ 
   release-project:
      name: release
      runs-on: ubunto-latest
