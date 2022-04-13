@@ -28,7 +28,7 @@ jobs:
      runs-on: ubuntu-latest
      steps:
      - name: donwloadartifact
-       uses: actions/upload-artifact@v1
+       uses: actions/upload-artifact@v3
        with:
         name: testArtifact
      - name:  testDonwload
