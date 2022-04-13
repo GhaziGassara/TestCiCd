@@ -2,7 +2,6 @@ image: microsoft/dotnet:latest
 
 stages:
     - build
-    - test
     - deploy
     
 variables:
@@ -17,12 +16,6 @@ build:
             - "bin/"
         expire_in: 1 week
         
-test:
-    stage: test
-    script: 
-        - "dotnet test"
-        - echo "testing"
-
 deploy: 
     stage: deploy
     variables:
