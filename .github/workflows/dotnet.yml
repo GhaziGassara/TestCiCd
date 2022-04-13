@@ -34,7 +34,6 @@ jobs:
      - name: donwloadartifact
        uses: actions/download-artifact@v3
        with:
-        name: testArtifact
         path: tt
      - name:  testDonwload
        run : ls -R
