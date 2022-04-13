@@ -28,3 +28,13 @@ jobs:
       with:
          name: my-artifact
          path: path/to/artifact/ 
+  release-project:
+     name: release
+     runs-on: ubunto-latest
+     steps:
+     - name: donwloadartifact
+       uses: actions/upload-artifact@v1
+       with:
+        name: testArtifact
+     - name:  testDonwload
+       run : ls -R
