@@ -31,5 +31,6 @@ jobs:
        uses: actions/upload-artifact@v3
        with:
         name: testArtifact
+        path: tt
      - name:  testDonwload
        run : ls -R
