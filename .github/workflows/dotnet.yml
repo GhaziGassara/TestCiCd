@@ -17,9 +17,7 @@ jobs:
         uses: actions/setup-dotnet@v2
         with:
           dotnet-version: 3.1
-      - run: dotnet build
-
-
+      - run: dotnet build TestCiCd
       - name: upload content
         uses: actions/upload-artifact@v3
         with:
