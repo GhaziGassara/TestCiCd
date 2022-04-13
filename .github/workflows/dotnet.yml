@@ -25,7 +25,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
   release-project:
      name: release
-     runs-on: ubunto-latest
+     runs-on: ubuntu-latest
      steps:
      - name: donwloadartifact
        uses: actions/upload-artifact@v1
