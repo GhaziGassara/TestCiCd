@@ -9,7 +9,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     name: Dotnet Side by Side testing sample
     steps:
       - uses: actions/checkout@v3
@@ -25,7 +25,7 @@ jobs:
           path: pathtt
   deploy:
      name: release
-     runs-on: ubuntu-latest
+     runs-on: windows-latest
      needs: build
      steps:
      - name: donwloadartifact
