@@ -22,7 +22,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: uploadartifact
-          path: tt
+          path: pathtt
   deploy:
      name: release
      runs-on: ubuntu-latest
