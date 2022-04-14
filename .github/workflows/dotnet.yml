@@ -9,28 +9,25 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
-    name: Dotnet Side by Side testing sample
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup dotnet
-        uses: actions/setup-dotnet@v2
-        with:
-          dotnet-version: 3.1
-      - run: dotnet build 
-      - name: upload content
-        uses: actions/upload-artifact@v2
-        with:
-          name: uploadartifact
-          path: pathtt
-  deploy:
-     name: release
-     runs-on: windows-latest
-     needs: build
-     steps:
-     - name: donwloadartifact
-       uses: actions/download-artifact@v3
-       with:
-        path: tt
-     - name:  testDonwload
-       run : ls -R
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    - name: Publish
+      run: dotnet publish TestCiCd/TestCiCd.csproj -c Release -o release --nologo
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Application_Artifact
+        path: /home/runner/work/TestCiCd/TestCiCd/release/
+
