@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "059Ibb8YyHt1fb0bPAPGxRRO31+U/oQB7y2IMtClVkJewKLL2m66zkNF3yQiTKFYSEYCT8YI113LetxdGtfiQg==",
+  "dgSpecHash": "ZoSbjAXQkkLiFfvd67tBmzseQi35FaF7EfKaxSGKWBS61sy3BlirKxOmYo/y4jMzBd5gRr4dIdnbMCpd6Y7LNA==",
   "success": true,
   "projectFilePath": "C:\\Users\\g.gassara\\source\\repos\\testCICD\\testCICD\\testCICD.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\g.gassara\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
+  ],
   "logs": []
 }
